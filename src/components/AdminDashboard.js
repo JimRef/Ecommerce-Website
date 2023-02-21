@@ -1,7 +1,8 @@
-import {Table,Container, Button} from 'react-bootstrap';
-import {useContext, useEffect, useState} from 'react'
-import {Link, Navigate} from 'react-router-dom'
+import {Row,Col, Button} from 'react-bootstrap';
+import {useContext, useEffect, useState, Fragment} from 'react'
+import {Link, Navigate,useParams} from 'react-router-dom'
 import UserContext from '../UserContext.js';
+import Swal from 'sweetalert2';
 
 export default function AdminDashboard({propProduct}){
 	
@@ -11,6 +12,7 @@ export default function AdminDashboard({propProduct}){
 	// const [prices, setPrices] = useState('');
 	const {user, setUser} = useContext(UserContext);
 	const [Active, setActive] = useState('');
+	// const [archive, setArchive] = useState('');
 	// const {productId} = useParams();
 
 	
@@ -20,51 +22,51 @@ useEffect(()=> {
 		} else {
 			setActive("Not Available")
 		}
-	},[])
+},[isActive])
+
+
+
+	
 
 
 	
 
 	return(
 		
-		<Container>
 		
-		<Table striped bordered hover  className = "mt-3">
-		<thead className="bg-dark text-light">
-	        <tr>
-	          <th>Product Name</th>
-	          <th>Description</th>
-	          <th>Price</th>
-	          <th>Availability</th>
-	          <th>Actions</th>
-	        </tr>	        
-	      </thead>
+		
 			<tbody>
 	      		<tr>
 				  <td>{productName}</td>
 		          <td>{description}</td>
 		          <td>{price}</td>
 		          <td>{Active}</td>
+		          
 		          <td>
-		          <Button as = {Link} to = {`/update/${_id}`}>
+		          <Row>
+		          
+		          <Button as = {Link} to = {`/update/${_id}`} className="m-1">
 		          Update
 		          </Button>
 		          {
 
-		          isActive ?		          	
-		          <Button>
+		          isActive ?
+		          		          	
+		          <Button as = {Link} to = {`/archive/${_id}`} className="m-1">
 		          Disable
-		          </Button>
+		          </Button>		          
+		          
 		          :
-		          <Button>
+		          <Button as = {Link} to = {`/archive/${_id}`} className="m-1">
 		          Enable
 		          </Button>
 		          }
-		          
+
+		          </Row>
 		          </td>
+
 	      		</tr>
 	       </tbody>
-		    </Table>
-		</Container>    
+		        
 		)
 }

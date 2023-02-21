@@ -33,15 +33,17 @@ export default function AppNavBar(){
 		        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 		        <Navbar.Collapse id="basic-navbar-nav">
 		          <Nav className="ms-auto">
-		          <Nav.Link as = {NavLink} to = "/">Home</Nav.Link>		            
+		          		            
 		          {/*<Nav.Link as = {NavLink} to = "/product">Products</Nav.Link>*/}
 		          
 		          {
 		          	user && user.isAdmin ?
 		          	<Nav.Link as = {NavLink} to = "/admindashboard">Dashboard</Nav.Link>
 		          	:
-		          	
+		          	<Fragment>
+		          	<Nav.Link as = {NavLink} to = "/">Home</Nav.Link>
 		          	<Nav.Link as = {NavLink} to = "/product">Products</Nav.Link>
+		          	</Fragment>
 		          }
 		            
 		            {

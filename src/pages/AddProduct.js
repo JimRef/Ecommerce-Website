@@ -1,13 +1,14 @@
 import {Form, Button} from "react-bootstrap";
 import {useState, useEffect, Fragment} from 'react';
 import Swal from 'sweetalert2';
-import {Navigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 export default function AddProduct(){
 	const [productName, setProductName] = useState('');
 	const [description, setDescription] = useState('');
 	const [price, setPrice] = useState('');
 	const [isActive, setIsActive] = useState('');
+	const navigate = useNavigate()
 
 	useEffect(()=>{
 		if (productName !== "" && description !== "" && price !== "") {
@@ -38,6 +39,7 @@ export default function AddProduct(){
 					icon: "success",
 					text: "You Added a New Product"
 				})
+				navigate("/admindashboard")
 			} else {
 				Swal.fire({
 					title: "Something went wrong",
@@ -84,7 +86,7 @@ export default function AddProduct(){
      			<Button variant="success" type="submit">
      	  		Add
      			</Button>
-     			<Navigate to = "/admindashboard"/>
+     			
      			</Fragment>
      			:
      			<Button variant="secondary" type="submit" disabled>

@@ -35,6 +35,11 @@ export default function Login(){
 				id: data._id,
 				isAdmin: data.isAdmin
 			})
+			if (data.isAdmin === true) {
+				navigate("/admindashboard")
+			} else {
+				navigate("/")
+			}
 		})
 	}
 
@@ -52,7 +57,7 @@ export default function Login(){
 			})
 		}).then(result => result.json())
 		.then(data =>{
-			
+
 			console.log(data)
 			if (data === false) {
 				Swal.fire({
@@ -60,9 +65,7 @@ export default function Login(){
 				icon: 'error',
 				text: "Please try again!"
 			})
-			} else if(data.isAdmin === true){
-					
-
+			}  else {
 					localStorage.setItem('token', data.auth)
 					retrieveUserDetails(localStorage.getItem('token'))
 
@@ -71,20 +74,6 @@ export default function Login(){
 						icon: "success",
 						text: `Welcome to our Website`
 					})
-
-					navigate("/admindashboard")
-		
-			} else {
-				localStorage.setItem('token', data.auth)
-					retrieveUserDetails(localStorage.getItem('token'))
-
-					Swal.fire({
-						title: "Authentication successfull",
-						icon: "success",
-						text: `Welcome to our Website`
-					})
-
-					navigate("/")
 			}
 		})
 	}

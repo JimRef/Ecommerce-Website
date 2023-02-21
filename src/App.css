@@ -13,14 +13,17 @@
    margin: auto;
 }
 
-/*body {
+body {
     
-    background-image: url("https://i.ibb.co/k5Km589/pexels-adrien-olichon-2387793.jpg");
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
+    background-color:  #8E3200 !important;
+    /*background-repeat: no-repeat;
+    background-size: 100%;*/
+/*    background-position: center;*/
+
 }
-*/
+
+
+
 .logo{
     width: 50px;
     border-radius: 50%;

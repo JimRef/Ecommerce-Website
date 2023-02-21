@@ -9,7 +9,7 @@ export default function Dashboard(){
 	
  const [products, setProducts] = useState([]);
  const {user, setUser} = useContext(UserContext);
- const [isAdmin, setIsAdmin] = useState(false);
+ const [isAdmin, setIsAdmin] = useState();
  const navigate = useNavigate();
 // console.log(user)
 
@@ -31,24 +31,15 @@ export default function Dashboard(){
  	})
  },[])
 
- /*useEffect(()=>{
-		fetch(`${process.env.REACT_APP_ECOM_API}/user/details`,{
-			headers:{
-				Authorization: `Bearer ${localStorage.getItem('token')}`
-			}
-		}).then(result => result.json())
-		.then(data =>{
-			setIsAdmin(data.isAdmin)
-		})
-	},[])*/
 
  
 
 
 	return(
-		// isAdmin ?
+		user && user.isAdmin ?
+		
 		<Fragment>
-		<Container fluid>
+		<Container>
 		<h1 className="text-center mt-3">Admin Dashboard</h1>
 		<Row className = "justify-content-center mx-auto mt-3">
 		<Col md="auto">
@@ -57,14 +48,28 @@ export default function Dashboard(){
 		<Col md="auto">
 		<Button>View All Orders</Button>
 		</Col>
-		</Row>		  
+		</Row>
+		<Row>
+		<Col>
+		<Table  className="mt-3">
+		<thead className="mt-3 bg-dark text-light">
+	        <tr >
+	          <th>Product Name</th>
+	          <th>Description</th>
+	          <th>Price</th>
+	          <th>Availability</th>
+	          <th>Actions</th>
+	        </tr>	        	        
+	      </thead>
 	      {products}
+	    </Table>
+	    </Col>
+	    </Row>  		  
+	      
 		</Container>
 		</Fragment>
-		// :
-		// <Navigate to = "/login"/>
-		
-		
+		:
+		<Navigate to = "*"/>
 		
 		
 

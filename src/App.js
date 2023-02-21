@@ -12,6 +12,7 @@ import ProductView from './components/ProductView.js';
 import Dashboard from './pages/Dashboard.js';
 import AddProduct from './pages/AddProduct.js'
 import UpdateProduct from './pages/Updateproduct.js'
+import ArchiveProduct from './pages/ArchiveProduct.js'
 
 
 import {UserProvider} from './UserContext.js'
@@ -42,6 +43,7 @@ useEffect(()=>{
     }
   }).then(result => result.json())
   .then(data =>{
+    // console.log(data)
     if (localStorage.getItem('token')!==null) {
       setUser({
         id: data._id,
@@ -72,6 +74,7 @@ useEffect(()=>{
             <Route path="/addproduct" element ={<AddProduct/>}/>
             <Route path="/singleproduct/:productId" element ={<ProductView/>}/>
             <Route path="/update/:productId" element ={<UpdateProduct/>}/>
+            <Route path="/archive/:productId" element ={<ArchiveProduct/>}/>
 
         </Routes>
     </Router>
