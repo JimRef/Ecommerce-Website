@@ -45,19 +45,19 @@ useEffect(()=> {
 		          <td>
 		          <Row>
 		          
-		          <Button as = {Link} to = {`/update/${_id}`} className="m-1">
+		          <Button as = {Link} to = {`/update/${_id}`} className="m-1" id="adminbutton">
 		          Update
 		          </Button>
 		          {
 
 		          isActive ?
 		          		          	
-		          <Button as = {Link} to = {`/archive/${_id}`} className="m-1">
+		          <Button as = {Link} to = {`/archive/${_id}`} className="m-1" id="adminbutton">
 		          Disable
 		          </Button>		          
 		          
 		          :
-		          <Button as = {Link} to = {`/archive/${_id}`} className="m-1">
+		          <Button as = {Link} to = {`/archive/${_id}`} className="m-1" id="adminbutton">
 		          Enable
 		          </Button>
 		          }

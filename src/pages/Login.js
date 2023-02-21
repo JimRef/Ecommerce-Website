@@ -30,7 +30,7 @@ export default function Login(){
 			}
 		}).then(result => result.json())
 		.then(data =>{
-			console.log(data)
+			
 			setUser({
 				id: data._id,
 				isAdmin: data.isAdmin
@@ -58,7 +58,7 @@ export default function Login(){
 		}).then(result => result.json())
 		.then(data =>{
 
-			console.log(data)
+			
 			if (data === false) {
 				Swal.fire({
 				title: "Authentication failed!",
@@ -103,7 +103,7 @@ export default function Login(){
 					       		value = {email}
 					       		onChange = {event => setEmail(event.target.value)}
 					       		required />
-					       <Form.Text className="text-muted">
+					       <Form.Text id="textmute">
 					         We'll never share your email with anyone else.
 					       </Form.Text>
 					     </Form.Group>
@@ -116,13 +116,13 @@ export default function Login(){
 					       		value = {password}
 					       		onChange = {event => setPassword(event.target.value)}
 					       		required />
-					       	<Form.Text className="text-muted">
+					       	<Form.Text id="textmute">
 					         Don't have an account? <Link to ="/register">Register</Link>
 					       </Form.Text>	
 					     </Form.Group>		
 					     			     
 					     
-					     	<Button variant="success" type="submit">
+					     	<Button id="loginbutton" type="submit">
 					     	  Submit
 					     	</Button>
 					     	

@@ -1,4 +1,4 @@
-import {Container, Nav, Navbar} from 'react-bootstrap';
+import {Container, Row, Col, Nav, Navbar} from 'react-bootstrap';
 import {Link, NavLink} from 'react-router-dom';
 import {Fragment, useContext, useState,useEffect} from 'react';
 import UserContext from '../UserContext.js';
@@ -20,10 +20,12 @@ export default function AppNavBar(){
 	// },[])
 
 	return(
-		<Navbar className="Nav" expand="lg">
-		      <Container>
-		        {/*<Navbar.Brand as = {Link} to = "/">Gadget Shop</Navbar.Brand>*/}
-		        <Navbar.Brand as = {Link} to = "/">
+		<Container fluid>
+		<Row>
+			
+		<Navbar className="Nav" md="auto" xs="12" lg="auto" expand="lg">
+			<Col  md="auto" xs="12" lg="auto">
+		        <Navbar.Brand as = {Link} to = {user && user.isAdmin ? '/admindashboard': '/'}>
 		        <img
 		        className="logo" 
 		        src="https://i.ibb.co/Bzsr40T/Rose-Gold-Photography-Circle-Logo.png"
@@ -32,7 +34,9 @@ export default function AppNavBar(){
 		        
 		        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 		        <Navbar.Collapse id="basic-navbar-nav">
-		          <Nav className="ms-auto">
+		        
+		        
+		          <Nav className="ms-auto ">
 		          		            
 		          {/*<Nav.Link as = {NavLink} to = "/product">Products</Nav.Link>*/}
 		          
@@ -65,8 +69,12 @@ export default function AppNavBar(){
 		            
        
 		          </Nav>
+		          
 		        </Navbar.Collapse>
-		      </Container>
+		     </Col> 
 		    </Navbar>
+
+		    </Row>
+		</Container>    
 		)
 }

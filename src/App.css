@@ -2,20 +2,46 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato' , sans-serif;
+    color: #D7A86E;
     }
 
 .Nav {
-    background-color: #6096B4;
+    background-color: #8E3200;
 }
 
 .Item{
 /*   width: 70%;*/
    margin: auto;
+
+}
+
+#Cardbutton {
+    background-color: #8E3200;
+    border: none;
+}
+
+#loginbutton {
+    background-color: #D7A86E;
+    border: none;
+}
+
+#textmute {
+    color: #D7A86E;
+}
+
+#adminbutton {
+    background-color: #D7A86E;
+    border: none;
+}
+
+#bannertxt {
+    font-size: 100px;
 }
 
 body {
-    
-    background-color:  #8E3200 !important;
+
+    background-color:  #A64B2A !important;
     /*background-repeat: no-repeat;
     background-size: 100%;*/
 /*    background-position: center;*/

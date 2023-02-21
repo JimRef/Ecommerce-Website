@@ -42,17 +42,17 @@ export default function Dashboard(){
 		<Container>
 		<h1 className="text-center mt-3">Admin Dashboard</h1>
 		<Row className = "justify-content-center mx-auto mt-3">
-		<Col md="auto">
-		<Button as = {Link} to = "/addproduct">Add Products</Button>
+		<Col md="auto" xs="auto">
+		<Button as = {Link} to = "/addproduct" id="adminbutton">Add Products</Button>
 		</Col>
-		<Col md="auto">
-		<Button>View All Orders</Button>
+		<Col md="auto" xs="auto">
+		<Button id="adminbutton">View All Orders</Button>
 		</Col>
 		</Row>
 		<Row>
 		<Col>
-		<Table  className="mt-3">
-		<thead className="mt-3 bg-dark text-light">
+		<Table  className="mt-3 text-center">
+		<thead className="mt-3 Nav ">
 	        <tr >
 	          <th>Product Name</th>
 	          <th>Description</th>

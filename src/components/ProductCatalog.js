@@ -1,7 +1,7 @@
-import {Button, Card, Row} from 'react-bootstrap';
+import {Button, Card, Row, Container, Col} from 'react-bootstrap';
 import {useContext} from 'react';
 import UserContext from '../UserContext.js';
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 
 export default function ProductCatalog({productProp}){
 	
@@ -9,7 +9,11 @@ export default function ProductCatalog({productProp}){
 	const {user} = useContext(UserContext);
 
 	return(
-		<Row className="">
+		user && user.isAdmin ?
+		<Navigate to = "*"/>
+		:
+		<Container fluid>
+		<Row className="justify-content-center mx-auto">
 			
 				<Card className="mt-5 mx-auto col-md-4 col-10 m-1">		      
 				      <Card.Body>
@@ -21,14 +25,15 @@ export default function ProductCatalog({productProp}){
 				        
 				        {
 				        	user ?
-				        	<Button as = {Link} to = {`/singleproduct/${_id}`} variant="primary">See more details</Button>
+				        	<Button as = {Link} to = {`/singleproduct/${_id}`} id="Cardbutton">See more details</Button>
 				        	:
-				        	<Button as = {Link} to = "/login" variant="primary">Login</Button>
+				        	<Button as = {Link} to = "/login" id="Cardbutton">Login</Button>
 				        }
 
 				      </Card.Body>
 				</Card>
 			
 		</Row>
+		</Container>
 		)
 }

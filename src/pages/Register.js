@@ -99,7 +99,7 @@ export default function Register(){
 						       		value = {email}
 						       		onChange = {event => setEmail(event.target.value)}
 						       		required />
-						       	<Form.Text className="text-muted">
+						       	<Form.Text id="textmute">
 			         				We'll never share your email with anyone else.
 			       				</Form.Text>	
 						     </Form.Group>
@@ -136,11 +136,11 @@ export default function Register(){
 
 						     {
 						     	isActive ?
-			     			<Button variant="primary" type="submit">
+			     			<Button id="loginbutton" type="submit">
 			     	  		Submit
 			     			</Button>
 			     			:
-			     			<Button variant="secondary" type="submit" disabled>
+			     			<Button id="loginbutton" type="submit" disabled>
 			     			  Submit
 			     			</Button>
 

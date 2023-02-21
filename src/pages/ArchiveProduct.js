@@ -9,51 +9,52 @@ export default function ArchiveProduct(){
 	// const [description, setDescription] = useState('');
 	// const [price, setPrice] = useState('');
 
-
+	
 	const [archive, setArchive] = useState()
 	const {productId, isActive} = useParams();
 	const navigate = useNavigate()
 
+// useEffect(()=>{
+// 	fetch(`${process.env.REACT_APP_ECOM_API}/product/singleproduct/${productId}`)
+// 		.then(result => result.json())
+// 		.then(data => {			
+// 			if (data.isActive === true) {
+// 				setArchive(false)			
+			  
+// 			} else {
+// 				setArchive(true)
 
-
-
-
+// 			}
+// 		})
+		
+// 	setTimeout(()=> {
+// 		navigate('/admindashboard')
+// 	},4000)
+	
+// },[])
 
 
 
 
 	
-function archiveProduct(){
-	fetch(`http://localhost:4000/product/singleproduct/${productId}`)
-		.then(result => result.json())
-		.then(data => {			
-			if (data.isActive === true) {
-				setArchive(false)			
-			  
-			} else {
-				setArchive(true)
-
-			}
-		})
+// function archiveProduct(){
+	
 
 		fetch(`http://localhost:4000/product/archive/${productId}`,{
 			method: 'PUT',
 			headers:{
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${localStorage.getItem('token')}`
-			},
-			body: JSON.stringify({				
-				isActive: archive
-			})
+			}
+			
 		})
-}
+		// navigate('/admindashboard')
 
-useEffect(()=>{
-	setTimeout(()=> {
-		navigate('/admindashboard')
-	},3000)
-	
-},[])
+// }
+
+
+
+
 
 		
 		// <Navigate to = "/admindashboard"/>
@@ -83,8 +84,8 @@ useEffect(()=>{
       
   //   </Card>	
   //   </Container>
-		archiveProduct()
-		
+		// archiveProduct()
+		<Navigate to = "/admindashboard"/>
 		
 		
 
