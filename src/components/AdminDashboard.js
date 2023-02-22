@@ -2,7 +2,7 @@ import {Row,Col, Button} from 'react-bootstrap';
 import {useContext, useEffect, useState, Fragment} from 'react'
 import {Link, Navigate,useParams} from 'react-router-dom'
 import UserContext from '../UserContext.js';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 export default function AdminDashboard({propProduct}){
 	
@@ -32,8 +32,6 @@ useEffect(()=> {
 	
 
 	return(
-		
-		
 		
 			<tbody>
 	      		<tr>

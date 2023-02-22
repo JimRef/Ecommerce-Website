@@ -39,6 +39,16 @@
     font-size: 100px;
 }
 
+#cardtitle {
+    color: #8E3200;
+}
+
+#cardsubtitle {
+    color: #D7A86E;
+}
+
+
+
 body {
 
     background-color:  #A64B2A !important;

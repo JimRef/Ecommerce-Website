@@ -21,17 +21,19 @@ export default function AppNavBar(){
 
 	return(
 		<Container fluid>
-		<Row>
-			
+		
+		<Row>	
 		<Navbar className="Nav" md="auto" xs="12" lg="auto" expand="lg">
-			<Col  md="auto" xs="12" lg="auto">
+				<Col md={{ span: 2, offset: 1 }}>
 		        <Navbar.Brand as = {Link} to = {user && user.isAdmin ? '/admindashboard': '/'}>
 		        <img
+
 		        className="logo" 
 		        src="https://i.ibb.co/Bzsr40T/Rose-Gold-Photography-Circle-Logo.png"
 		        />
 		        </Navbar.Brand>
-		        
+		        </Col>
+		        <Col md={{ span: 4, offset: 4 }}>
 		        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 		        <Navbar.Collapse id="basic-navbar-nav">
 		        
@@ -71,10 +73,10 @@ export default function AppNavBar(){
 		          </Nav>
 		          
 		        </Navbar.Collapse>
-		     </Col> 
+		    </Col>
 		    </Navbar>
 
-		    </Row>
+		   </Row> 
 		</Container>    
 		)
 }

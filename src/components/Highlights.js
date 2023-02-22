@@ -3,8 +3,9 @@ import {Container, Row, Col} from 'react-bootstrap'
 
 export default function Highlights(){
 	return(
-	<Container className="container-fluid mt-5">
-		<Row className="m-auto">	
+	<Container fluid className=" mt-5">
+		<Row>
+		<Col>	
 		<Carousel variant="dark">
 			
 		      <Carousel.Item>
@@ -31,6 +32,7 @@ export default function Highlights(){
 		        />		        
 		      </Carousel.Item>
 		    </Carousel>
+		    </Col>
 		    </Row>
 		</Container>
 

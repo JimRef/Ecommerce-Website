@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Form, Button} from 'react-bootstrap';
-import {useParams, useNavigate} from 'react-router-dom';
+import {useParams, useNavigate, Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
@@ -64,6 +64,7 @@ export default function UpdateProduct(){
 
 	return(
 		<Form className="mt-5 mx-auto col-md-6" onSubmit = {event => updateProduct(event)}>
+			<Button as = {Link} to = "/admindashboard" id="adminbutton">Back</Button>
 			<h1 className="text-center mt-5">Edit Product</h1>
 			<Form.Group className="mb-3" controlId="formProductName">
 			    <Form.Label>Product Name</Form.Label>
@@ -92,7 +93,7 @@ export default function UpdateProduct(){
 			       	onChange = {event => setPrice(event.target.value)}
 			       	required />
 			</Form.Group>
-			<Button type="submit">Update Product</Button>
+			<Button id="adminbutton" type="submit">Update Product</Button>
 
 		</Form>	
 		)

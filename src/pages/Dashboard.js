@@ -46,7 +46,7 @@ export default function Dashboard(){
 		<Button as = {Link} to = "/addproduct" id="adminbutton">Add Products</Button>
 		</Col>
 		<Col md="auto" xs="auto">
-		<Button id="adminbutton">View All Orders</Button>
+		<Button as = {Link} to = "/viewallorder" id="adminbutton">View All Orders</Button>
 		</Col>
 		</Row>
 		<Row>

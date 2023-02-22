@@ -1,7 +1,7 @@
 import {Form, Button} from "react-bootstrap";
 import {useState, useEffect, Fragment} from 'react';
 import Swal from 'sweetalert2';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 export default function AddProduct(){
 	const [productName, setProductName] = useState('');
@@ -52,6 +52,7 @@ export default function AddProduct(){
 
 	return(
 		<Form className="mt-5 mx-auto col-md-6" onSubmit = {event => addproduct(event)}>
+			<Button as = {Link} to = "/admindashboard" id="adminbutton">Back</Button>
 			<h1 className="text-center mt-5">Add Product</h1>
 			<Form.Group className="mb-3" controlId="formProductName">
 			    <Form.Label>Product Name</Form.Label>
@@ -83,13 +84,13 @@ export default function AddProduct(){
 			     {
 			     	isActive ?
 			     <Fragment>	
-     			<Button variant="success" type="submit">
+     			<Button id="adminbutton" type="submit">
      	  		Add
      			</Button>
      			
      			</Fragment>
      			:
-     			<Button variant="secondary" type="submit" disabled>
+     			<Button id="adminbutton" type="submit" disabled>
      			  Add
      			</Button>
 

@@ -17,10 +17,10 @@ export default function ProductCatalog({productProp}){
 			
 				<Card className="mt-5 mx-auto col-md-4 col-10 m-1">		      
 				      <Card.Body>
-				        <Card.Title>{productName}</Card.Title>
-				        <Card.Subtitle><strong>Description:</strong></Card.Subtitle>
+				        <Card.Title id="cardtitle">{productName}</Card.Title>
+				        <Card.Subtitle id="cardsubtitle"><strong>Description:</strong></Card.Subtitle>
 				        <Card.Text>{description}</Card.Text>
-				        <Card.Subtitle><strong>Price:</strong></Card.Subtitle>
+				        <Card.Subtitle id="cardsubtitle"><strong>Price:</strong></Card.Subtitle>
 				        <Card.Text>{price}</Card.Text>
 				        
 				        {
