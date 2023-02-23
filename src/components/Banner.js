@@ -15,7 +15,7 @@ useEffect(()=>{
     }
   }).then(result => result.json())
   .then(data =>{
-    // console.log(data)
+    
     if (localStorage.getItem('token')!==null) {
       setUser({
         id: data._id,
@@ -40,7 +40,7 @@ useEffect(()=>{
 		}
 		
 		<Col className="m-2 p-1">
-		<Button as = {Link} to = "/product">
+		<Button as = {Link} to = "/product" id="Cardbutton">
 		See about our products
 		</Button>
 		</Col>

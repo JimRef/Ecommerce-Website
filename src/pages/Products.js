@@ -8,7 +8,7 @@ export default function Product(){
 		fetch(`${process.env.REACT_APP_ECOM_API}/product/allactiveproduct`)
 		.then(result => result.json())
 		.then(data =>{
-			console.log(data)
+			
 			setProducts(data.map(product =>{
 				return(
 					<ProductCatalog key={product._id} productProp={product}/>

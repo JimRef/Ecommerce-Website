@@ -27,7 +27,7 @@ export default function Register(){
 
 	function register(event){
 		event.preventDefault();
-		// console.log(`${process.env.REACT_APP_ECOM_API}`)
+		
 		fetch(`${process.env.REACT_APP_ECOM_API}/user/register`,{
 			method: 'POST',
 			headers: {
@@ -48,12 +48,12 @@ export default function Register(){
 					icon: "success",
 					text: "You may now Login"
 				})
-				navigate("/")
+				navigate("/login")
 			} else {
 				Swal.fire({
 					title: "Registration Unsuccessfull",
 					icon: "error",
-					text: "Please try again"
+					text: "Please try again the Email address has already registered"
 				})
 			}
 		})

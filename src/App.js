@@ -33,7 +33,7 @@ const unSetUser = ()=> {
 
 
 /*useEffect(()=>{
-  console.log(user)
+  
 }, [user])*/
 
 useEffect(()=>{

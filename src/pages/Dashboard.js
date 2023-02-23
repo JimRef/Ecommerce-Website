@@ -11,7 +11,7 @@ export default function Dashboard(){
  const {user, setUser} = useContext(UserContext);
  const [isAdmin, setIsAdmin] = useState();
  const navigate = useNavigate();
-// console.log(user)
+
 
  useEffect(()=>{
  	fetch(`${process.env.REACT_APP_ECOM_API}/product/allProduct`,{
@@ -21,7 +21,7 @@ export default function Dashboard(){
  	})
  	.then(result => result.json())
  	.then(data => {
- 		console.log(data)
+ 		
  		setProducts(data.map(product =>{
 
  			return(

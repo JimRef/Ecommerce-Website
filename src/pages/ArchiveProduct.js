@@ -10,7 +10,7 @@ export default function ArchiveProduct(){
 	
 	const [archive, setArchive] = useState()
 	const {productId, isActive} = useParams();
-
+	useEffect(()=>{
 		fetch(`${process.env.REACT_APP_ECOM_API}/product/archive/${productId}`,{
 			method: 'PUT',
 			headers:{
@@ -19,6 +19,11 @@ export default function ArchiveProduct(){
 			}
 			
 		})
+
+	},[])
+	
+	
+		
 		
 
 	return(
