@@ -1,7 +1,7 @@
-import {Row,Col, Button} from 'react-bootstrap';
-import {useContext, useEffect, useState, Fragment} from 'react'
-import {Link, Navigate,useParams} from 'react-router-dom'
-import UserContext from '../UserContext.js';
+import {Row, Button} from 'react-bootstrap';
+import { useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
+// import UserContext from '../UserContext.js';
 // import Swal from 'sweetalert2';
 
 export default function AdminDashboard({propProduct}){
@@ -10,7 +10,7 @@ export default function AdminDashboard({propProduct}){
 	// const [productNames, setProductNames] = useState('');
 	// const [descriptions, setDescriptions] = useState('');
 	// const [prices, setPrices] = useState('');
-	const {user, setUser} = useContext(UserContext);
+	// const {user, setUser} = useContext(UserContext);
 	const [Active, setActive] = useState('');
 	// const [archive, setArchive] = useState('');
 	// const {productId} = useParams();
