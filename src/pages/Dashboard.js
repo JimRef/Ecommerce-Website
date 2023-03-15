@@ -2,15 +2,15 @@ import AdminDashboard from '../components/AdminDashboard.js';
 import {useEffect, useState, Fragment,useContext} from 'react'
 import {Table,Container, Button,Row,Col} from 'react-bootstrap';
 import UserContext from '../UserContext.js';
-import {useNavigate , Link, Navigate} from 'react-router-dom'
-import Swal from 'sweetalert2';
+import {Link, Navigate} from 'react-router-dom'
+
 
 export default function Dashboard(){
 	
  const [products, setProducts] = useState([]);
- const {user, setUser} = useContext(UserContext);
- const [isAdmin, setIsAdmin] = useState();
- const navigate = useNavigate();
+ const {user} = useContext(UserContext);
+ 
+ 
 
 
  useEffect(()=>{

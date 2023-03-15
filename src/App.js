@@ -14,6 +14,7 @@ import AddProduct from './pages/AddProduct.js'
 import UpdateProduct from './pages/Updateproduct.js'
 import ArchiveProduct from './pages/ArchiveProduct.js'
 import ViewAllOrder from './pages/ViewAllOrder.js'
+import MyOrders from './pages/MyOrders.js'
 
 
 import {UserProvider} from './UserContext.js'
@@ -74,6 +75,7 @@ useEffect(()=>{
             <Route path="/admindashboard" element ={<Dashboard/>}/>
             <Route path="/addproduct" element ={<AddProduct/>}/>
             <Route path="/viewallorder" element ={<ViewAllOrder/>}/>
+            <Route path="/myorders" element ={<MyOrders/>}/>
 
             <Route path="/singleproduct/:productId" element ={<ProductView/>}/>
             <Route path="/update/:productId" element ={<UpdateProduct/>}/>

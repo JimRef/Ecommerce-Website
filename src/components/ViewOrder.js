@@ -6,7 +6,7 @@ export default function ViewOrder({orderProp}){
 
 	const {user} = useContext(UserContext);
 
-	const {_id, userId,products, productId,quantity, totalAmount, purchasedOn} = orderProp
+	const {_id, userId,products, totalAmount, purchasedOn} = orderProp
 
 	return(
 		user && user.isAdmin ?

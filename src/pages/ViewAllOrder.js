@@ -17,7 +17,6 @@ export default function ViewAllOrder(){
 		}
 	}).then(result => result.json())
 	.then(data =>{
-		
 		setOrders(data.map(order =>{
 			return(
 				<ViewOrder key={order._id} orderProp={order}/>
